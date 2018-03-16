@@ -33,10 +33,10 @@ import (
 )
 
 type Produto struct {
-	ID     string `json:"id,omitempty"`
-	Codigo string `json:"codigo,omitempty"`
-	Nome   string `json:"nome,omitempty"`
-	Valor  string `json:"valor,omitempty"`
+	ID     string  `json:"id,omitempty"`
+	Codigo int64   `json:"codigo,omitempty"`
+	Nome   string  `json:"nome,omitempty"`
+	Valor  float64 `json:"valor,omitempty"`
 }
 
 var produto []Produto
@@ -82,10 +82,10 @@ func main() {
 
 	router := mux.NewRouter()
 
-	produto = append(produto, Produto{ID: "1", Codigo: "767434", Nome: "Hd Externo", Valor: "300.00"})
-	produto = append(produto, Produto{ID: "2", Codigo: "647326", Nome: "Mouse Wireless", Valor: "59.00"})
-	produto = append(produto, Produto{ID: "3", Codigo: "872347", Nome: "Kit Teclado e Mouse Wireless", Valor: "144.00"})
-	produto = append(produto, Produto{ID: "4", Codigo: "732644", Nome: "Fone de Ouvido Bluetooth", Valor: "199.00"})
+	produto = append(produto, Produto{ID: "1", Codigo: 767434, Nome: "Hd Externo", Valor: 300.00})
+	produto = append(produto, Produto{ID: "2", Codigo: 647326, Nome: "Mouse Wireless", Valor: 59.00})
+	produto = append(produto, Produto{ID: "3", Codigo: 872347, Nome: "Kit Teclado e Mouse Wireless", Valor: 144.00})
+	produto = append(produto, Produto{ID: "4", Codigo: 732644, Nome: "Fone de Ouvido Bluetooth", Valor: 199.00})
 
 	// endpoints
 	router.HandleFunc("/produto", GetProdutoEndpoint).Methods("GET")
